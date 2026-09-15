@@ -1,12 +1,11 @@
 import express, { json } from 'express';
-import { getPlayers } from './controllers/player.controller';
+import router from './routes';
 
 export const createApp = () => {
     const app = express();
     
     app.use(json());
-    
-    app.get('/', getPlayers);
+    app.use('/api', router);
 
     return app;
 };
