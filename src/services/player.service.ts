@@ -46,7 +46,10 @@ export const updatePlayerService = async (id: number, statistics: StatisticsMode
 
 export const deletePlayerByIdService = async (id: number) => {
     let response = null;
-    await PlayerRepository.deletePlayerById(id);
-    response = HttpResponse.ok({ message: "Player deleted successfully" });
+    const isDeleted = await PlayerRepository.deletePlayerById(id);
+
+    if (isDeleted) response = HttpResponse.ok({ message: "Player deleted successfully" });
+    else response = HttpResponse.notFound();
+
     return response;
 };
