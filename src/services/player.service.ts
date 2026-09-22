@@ -18,7 +18,7 @@ export const getPlayerByIdService = async (id: number) => {
     let response = null;
 
     if (data) response = HttpResponse.ok(data);
-    else response = HttpResponse.noContent();
+    else response = HttpResponse.notFound();
 
     return response;
 };
@@ -39,7 +39,7 @@ export const updatePlayerService = async (id: number, statistics: StatisticsMode
     const data = await PlayerRepository.updatePlayer(id, statistics);
 
     if (data) response = HttpResponse.ok(data);
-    else response = HttpResponse.noContent();
+    else response = HttpResponse.notFound();
 
     return response;
 };
