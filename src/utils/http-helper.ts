@@ -5,7 +5,7 @@ export const ok = async (data: any): Promise<HttpResponse> => {
 }
 
 export const created = async (): Promise<HttpResponse> => {
-    return { statusCode: 201, body: { message: "Successful" }};
+    return { statusCode: 201, body: { message: "Created successfully" }};
 }
 
 export const noContent = async (): Promise<HttpResponse> => {
@@ -17,5 +17,5 @@ export const badRequest = async (): Promise<HttpResponse> => {
 }
 
 export const notFound = async (): Promise<HttpResponse> => {
-    return { statusCode: 404, body: { message: "Player not found" }}
+    return { statusCode: 404, body: { message: "Not found" }}
 }
