@@ -94,3 +94,8 @@ export const getPlayerById = async (id: number): Promise<PlayerModel | undefined
 export const createPlayer = async (player: PlayerModel) => {
     database.push(player);
 };
+
+export const deletePlayerById = async (id: number) => {
+    const index = database.findIndex(player => player.id === id);
+    if (index !== -1) database.splice(index, 1);
+};
