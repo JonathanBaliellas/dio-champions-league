@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express, { json } from 'express';
 import router from './routes';
 
@@ -6,6 +7,7 @@ export const createApp = () => {
     
     app.use(json());
     app.use('/api', router);
+    app.use(cors());
 
     return app;
 };
